@@ -16,6 +16,7 @@ import SalonFranchiseApp from './components/SalonFranchiseApp';
 import AboutUs from './components/AboutUs';
 import SalonPackageBooking from './Pages/SalonPackageBooking';
 import BeautyServicesBooking from './Pages/BeautyServicesBooking';
+import Appointment from './Pages/Appointment';
 function App() {
   return (
     <Router>
@@ -93,6 +94,7 @@ function App() {
 
          {/* service booking payment option  */}
          <Route path="/customizepackage" element={<BeautyServicesBooking/>} />
+         <Route path="/appointment" element={<Appointment/>} />
 
         
 

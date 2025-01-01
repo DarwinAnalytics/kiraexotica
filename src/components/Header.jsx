@@ -29,8 +29,16 @@ const Header = () => {
 
   const navigationItems = [
     {
-      label: 'About Us',
+      label: 'About',
       href: '/aboutus'
+    },
+    {
+      label: 'Package',
+      href: '/customizepackage'
+    },
+    {
+      label: 'Appointment ',
+      href: '/appointment'
     },
     {
       label: 'Academy',
@@ -44,7 +52,7 @@ const Header = () => {
       ]
     },
     {
-      label: 'Hair Care',
+      label: 'Hair',
       key: 'HairCare',
       subItems: [
         { label: 'Cuts', href: '/haircare/cuts' },
@@ -61,7 +69,7 @@ const Header = () => {
       ]
     },
     {
-      label: 'Skin Care',
+      label: 'Skin',
       key: 'skincare',
       subItems: [
         { label: 'Facial', href: '/skincare/facial' },
@@ -88,7 +96,7 @@ const Header = () => {
       ]
     },
     {
-      label: 'Medical Treatments',
+      label: 'Medical',
       key: 'medicaltreatment',
       subItems: [
         { label: 'Chemical peels', href: '/medicaltreatment/chemicalpeels' },
@@ -103,7 +111,7 @@ const Header = () => {
       ]
     },
     {
-      label: 'Laser Treatments',
+      label: 'Laser',
       key: 'laser',
       subItems: [
         { label: 'Laser Hair removal', href: '/laser/laserhairremoval' },

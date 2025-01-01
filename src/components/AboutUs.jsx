@@ -59,8 +59,9 @@ const AboutUs = () => {
           <Grid item xs={12} md={6}>
             <Card elevation={6}>
               <CardMedia
+              className='h-96'
                 component="img"
-                height="400"
+                height="250"
                 image={salonInteriorImage}
                 alt="Kira Exotica Salon Interior"
               />

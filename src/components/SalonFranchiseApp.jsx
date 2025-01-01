@@ -1,46 +1,6 @@
 import React, { useState } from 'react';
-import { 
-  ThemeProvider, 
-  createTheme, 
-  CssBaseline, 
-  Box, 
-  Container, 
-  Typography, 
-  Grid, 
-  Card, 
-  CardContent, 
-  Button, 
-  TextField, 
-  Paper,
-  AppBar,
-  Toolbar
-} from '@mui/material';
-import { 
-  Business as BusinessIcon,
-  StarBorder as StarBorderIcon,
-  EmojiObjects as EmojiObjectsIcon,
-  Support as SupportIcon,
-  AttachMoney as AttachMoneyIcon,
-  LocalOffer as LocalOfferIcon
-} from '@mui/icons-material';
+import { ArrowRight, Check, Star, Users, TrendingUp, HeartHandshake } from 'lucide-react';
 
-// Custom Theme
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#fff', // Deep purple accent
-    },
-    secondary: {
-      main: '#00000', // Pink accent
-    },
-    background: {
-      default: '#F3E5F5', // Light purple background
-    }
-  },
- 
-});
-
-// Franchise Inquiry Form Component
 const FranchiseInquiryForm = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -52,256 +12,213 @@ const FranchiseInquiryForm = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: Implement form submission logic
     console.log('Franchise Inquiry Submitted:', formData);
     alert('Thank you for your inquiry! We will contact you soon.');
   };
 
   return (
-    <Box 
-      component="form" 
-      onSubmit={handleSubmit} 
-      sx={{ 
-        mt: 4, 
-        p: 3, 
-        backgroundColor: 'white', 
-        borderRadius: 2 
-      }}
-    >
-      <Typography variant="h4" gutterBottom>
-        Franchise Inquiry Form
-      </Typography>
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            fullWidth
-            label="Full Name"
+    <form onSubmit={handleSubmit} className="space-y-8 bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl shadow-lg">
+      <div className="text-center space-y-2">
+        <h2 className="text-4xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+          Begin Your Success Story
+        </h2>
+        <p className="text-gray-600">Join our network of successful entrepreneurs</p>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-2">
+          <label className="text-sm font-medium text-gray-700">Full Name</label>
+          <input
+            type="text"
             name="name"
             value={formData.name}
             onChange={handleChange}
+            className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
             required
           />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            fullWidth
-            label="Email"
-            name="email"
+        </div>
+        <div className="space-y-2">
+          <label className="text-sm font-medium text-gray-700">Email</label>
+          <input
             type="email"
+            name="email"
             value={formData.email}
             onChange={handleChange}
+            className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
             required
           />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            fullWidth
-            label="Phone Number"
-            name="phone"
+        </div>
+        <div className="space-y-2">
+          <label className="text-sm font-medium text-gray-700">Phone Number</label>
+          <input
             type="tel"
+            name="phone"
             value={formData.phone}
             onChange={handleChange}
+            className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
             required
           />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            fullWidth
-            label="City"
+        </div>
+        <div className="space-y-2">
+          <label className="text-sm font-medium text-gray-700">City</label>
+          <input
+            type="text"
             name="city"
             value={formData.city}
             onChange={handleChange}
+            className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
             required
           />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            fullWidth
-            label="Expected Investment Range"
-            name="investment"
-            value={formData.investment}
-            onChange={handleChange}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <Button 
-            type="submit" 
-            variant="contained" 
-            color="primary" 
-            fullWidth
-            sx={{ py: 1.5 }}
-          >
-            Submit Inquiry
-          </Button>
-        </Grid>
-      </Grid>
-    </Box>
+        </div>
+      </div>
+      
+      <div className="space-y-2">
+        <label className="text-sm font-medium text-gray-700">Investment Range</label>
+        <input
+          type="text"
+          name="investment"
+          value={formData.investment}
+          onChange={handleChange}
+          className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+        />
+      </div>
+
+      <button
+        type="submit"
+        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-6 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center justify-center space-x-2 group"
+      >
+        <span>Submit Your Application</span>
+        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+      </button>
+    </form>
   );
 };
 
-// Main App Component
 const SalonFranchiseApp = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      
-      {/* Navigation */}
-     
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section */}
+      <div className="relative h-screen">
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 to-purple-900/50 mix-blend-multiply"></div>
+        <img
+          src="/api/placeholder/1920/1080"
+          alt="Luxury Salon Interior"
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 flex items-center justify-center text-center">
+          <div className="space-y-8 max-w-4xl px-4">
+            <h1 className="text-6xl md:text-7xl font-bold text-white">
+              Kira Exotica Salon
+            </h1>
+            <p className="text-2xl md:text-3xl text-white/90">
+              Transform the Beauty Industry with Our Premium Franchise Opportunity
+            </p>
+            <button className="bg-white text-gray-900 px-8 py-4 rounded-lg text-lg font-medium hover:bg-gray-100 transition-colors duration-200 inline-flex items-center space-x-2">
+              <span>Explore Opportunities</span>
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+      </div>
 
-      {/* Hero Banner */}
-      <Box 
-        sx={{
-          backgroundImage: 'url("/api/placeholder/1920/1080")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          height: '80vh',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: 'white',
-          textAlign: 'center',
-          backgroundColor: 'rgba(0,0,0,1)',
-          backgroundBlendMode: 'overlay'
-        }}
-      >
-        <Container>
-          <Typography variant="h2" gutterBottom>
-            Kira Exotica Salon Franchise
-          </Typography>
-          <Typography variant="h4">
-            Your Gateway to a Profitable Beauty Business
-          </Typography>
-        </Container>
-      </Box>
+      {/* Stats Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="text-center p-8 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100">
+            <div className="text-4xl font-bold text-blue-600 mb-2">₹27,000 Cr</div>
+            <p className="text-gray-600">Industry Value</p>
+          </div>
+          <div className="text-center p-8 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100">
+            <div className="text-4xl font-bold text-purple-600 mb-2">25%</div>
+            <p className="text-gray-600">Annual Growth Rate</p>
+          </div>
+          <div className="text-center p-8 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100">
+            <div className="text-4xl font-bold text-blue-600 mb-2">200+</div>
+            <p className="text-gray-600">Active Franchises</p>
+          </div>
+        </div>
+      </section>
 
-      {/* Industry Overview */}
-      <Container sx={{ py: 6 }}>
-        <Typography variant="h3" align="center" gutterBottom>
-          Beauty & Wellness Industry Opportunity
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Beauty and Wellness Industry in India is estimated to be 27,000 Crore in 2014 and is expected to grow 25% annually. 
-          The organized Beauty segment is growing rapidly not only in Tier 1 Cities but Tier II and Tier III Cities as well, 
-          making this a perfect time to invest in this lucrative and highly profitable business.
-        </Typography>
-      </Container>
-
-      {/* Why Choose Us */}
-      <Box sx={{ backgroundColor: 'white', py: 6 }}>
-        <Container>
-          <Typography variant="h3" align="center" gutterBottom>
-            Why Choose Kira Exotica?
-          </Typography>
-          <Grid container spacing={4}>
+      {/* Features Grid */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+              Why Partner With Us
+            </h2>
+            <p className="text-xl text-gray-600">Join the future of beauty and wellness</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { 
-                icon: <AttachMoneyIcon />, 
-                title: 'Profitable Industry', 
-                description: 'High margins and consistent revenue potential' 
+                icon: <TrendingUp className="w-8 h-8 text-blue-600" />,
+                title: 'Premium Returns',
+                description: 'High-margin business model with consistent revenue streams'
               },
-              { 
-                icon: <StarBorderIcon />, 
-                title: 'High Loyalty', 
-                description: 'Strong customer retention and repeat business' 
+              {
+                icon: <Star className="w-8 h-8 text-purple-600" />,
+                title: 'Brand Loyalty',
+                description: 'Strong customer retention through excellence in service'
               },
-              { 
-                icon: <SupportIcon />, 
-                title: 'Complete Support', 
-                description: 'Comprehensive guidance and training' 
+              {
+                icon: <HeartHandshake className="w-8 h-8 text-blue-600" />,
+                title: 'Complete Support',
+                description: 'Comprehensive training and operational guidance'
               },
-              { 
-                icon: <LocalOfferIcon />, 
-                title: 'Low Investment', 
-                description: 'High returns with minimal initial capital' 
+              {
+                icon: <Users className="w-8 h-8 text-purple-600" />,
+                title: 'Strategic Growth',
+                description: 'Optimized expansion strategy with maximum returns'
               }
-            ].map((item, index) => (
-              <Grid item xs={12} sm={6} md={3} key={index}>
-                <Card sx={{ height: '100%', textAlign: 'center', p: 2 }}>
-                  <Box sx={{ 
-                    color: 'primary.main', 
-                    fontSize: 60, 
-                    display: 'flex', 
-                    justifyContent: 'center', 
-                    mb: 2 
-                  }}>
-                    {item.icon}
-                  </Box>
-                  <Typography variant="h6" gutterBottom>
-                    {item.title}
-                  </Typography>
-                  <Typography variant="body2">
-                    {item.description}
-                  </Typography>
-                </Card>
-              </Grid>
+            ].map((feature, index) => (
+              <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <div className="mb-4">{feature.icon}</div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
+              </div>
             ))}
-          </Grid>
-        </Container>
-      </Box>
+          </div>
+        </div>
+      </section>
 
-      {/* Advantages of Partnership */}
-      <Container sx={{ py: 6 }}>
-        <Typography variant="h3" align="center" gutterBottom>
-          Advantages of Kira Exotica Franchise
-        </Typography>
-        <Grid container spacing={4}>
-          {[
-            "Guidance for locating the ideal area",
-            "Complete guidance for interiors, layouts, color schemes",
-            "Complete assistance in equipment and product purchase",
-            "Legal guidance and licenses",
-            "Software management and training",
-            "Marketing through digital media",
-            "Recruitment of salon manager",
-            "Assistance in hiring trained staff",
-            "Regular seminars and training programs",
-            "Dedicated marketing support",
-            "Sourcing products at subsidized rates",
-            "In-house products with signature techniques"
-          ].map((advantage, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
-              <Paper 
-                elevation={3} 
-                sx={{ 
-                  p: 3, 
-                  height: '100%', 
-                  display: 'flex', 
-                  alignItems: 'center' 
-                }}
-              >
-                <EmojiObjectsIcon 
-                  color="primary" 
-                  sx={{ mr: 2 }} 
-                />
-                <Typography variant="body1">
-                  {advantage}
-                </Typography>
-              </Paper>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
+      {/* Benefits */}
+      <section className="py-20 px-4 bg-gradient-to-br from-gray-900 to-blue-900 text-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold mb-16 text-center">Partnership Benefits</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              "Strategic location analysis and selection",
+              "Complete interior design and layout support",
+              "Equipment and inventory procurement",
+              "Legal compliance assistance",
+              "Management software and training",
+              "Digital marketing strategy",
+              "Staff recruitment and training",
+              "Regular skill development programs",
+              "Marketing and branding support"
+            ].map((benefit, index) => (
+              <div key={index} className="flex items-start space-x-3 p-6 rounded-lg bg-white/10 backdrop-blur-lg">
+                <Check className="w-6 h-6 text-blue-400 flex-shrink-0" />
+                <p className="text-white/90">{benefit}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* Franchise Inquiry Section */}
-      <Box sx={{ 
-        backgroundColor: 'primary.light', 
-        py: 6 
-      }}>
-        <Container>
+      {/* Inquiry Form Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto">
           <FranchiseInquiryForm />
-        </Container>
-      </Box>
-
-    
-    </ThemeProvider>
+        </div>
+      </section>
+    </div>
   );
 };
 

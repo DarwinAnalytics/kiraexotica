@@ -44,7 +44,182 @@ const FEMALE_SERVICES = {
     'Full Legs': 850,
     'Feet': 250,
     'Full Body': 1550
+  },
+  deTan: {
+    'Face': 450,
+    'Neck': 250,
+    'Face & Neck': 550,
+    'Full Arms': 850,
+    'Underarms': 250,
+    'Legs': 1150,
+    'Feet': 250,
+    'Half Legs': 850,
+    'Full Back': 850,
+    'Half Back': 450,
+    'Front': 850,
+    'Stomach': 450,
+    'Bikini': 550,  // Female only
+    'Bumbs': 550,  // Female only
+    'Full Body (Excluded Bikini & Hips)': 2250
+},
+
+  massage: {
+    "Body Massage with Vitamin C (60 Min)": 2550,
+    "Body Oil Massage with Potli (60 Min)": 3550,
+    "Body Massage with Olive (60 Min)": 2550,
+    "Body Steam (5-8 Min)": 550,
+    "Body Spa in Chocolate": 2050,
+    "Exotic Body Spa": 3550,
+    "Massage with Aroma Oil": 1550,
+    "Massage Head to Toe": 2050,
+    "Double Tissue Massage": 2550,
+    "Foot Massage": 550,
+    "Legs Massage": 950,
+    "Hand Massage": 650,
+    "Shoulder Massage": 450,
+    "Back Massage": 750,
+    "Head Massage": 450
+  },
+  bodyPolishing:{
+    "Black Current": 3050,
+    "Watermelon": 2050,
+    "Cucumber": 2050,
+    "Orange And Peach": 2550,
+    "Strawberry": 2050,
+    "Chocolate": 3550,
+    "Stone Body Polish with Oil": 4550,
+    "Body Exfoliation": 1550,
+    "Body Detaining": 1550,
+    "Body Potli with Oil": 5550
+  },
+  bodyPolishing:{
+    "Black Current": 3050,
+    "Watermelon": 2050,
+    "Cucumber": 2050,
+    "Orange And Peach": 2550,
+    "Strawberry": 2050,
+    "Chocolate": 3550,
+    "Stone Body Polish with Oil": 4550,
+    "Body Exfoliation": 1550,
+    "Body Detaining": 1550,
+    "Body Potli with Oil": 5550
+  },
+  skinCareFacial:{
+    "Regular Clean-Up": 850,
+    "Deep Cleansing": 450,
+    "Hydration Clean-Up": 950,
+    "Lubricant Clean-Up": 1250,
+    "De-tan Clean-Up": 950,
+    "Advance Clean-Up": 1250,
+    "International Clean-Up": 2050,
+    "Rejuvenation Facial": 1250,
+    "Herbal Facial": 1350,
+    "Fresh Fruit Facial": 1250,
+    "Fruit Facial": 1250,
+    "Radiance Facial": 1750,
+    "Chocolate Facial": 1750,
+    "Carbon Facial": 4550,
+    "Wine Facial": 2550,
+    "Vitamin C": 2550,
+    "Signature Facial": 2850,
+    "Experience Hydra Facial": 2550,
+    "Hydra Facial With Anti-Aging": 3550,
+    "Advance Hydra With Required": 5550
+  },
+  skinTreatment:{
+    "Lubricant Facial": 1550,
+    "Facial With Stone": 2500,
+    "Antiaging & Firming Facial": 2550
+  },
+  facepack:{
+    "De-Tan Pack": 450,
+    "Advance De-Tan Pack": 650,
+    "Glow Pack": 550,
+    "Tightening Pack": 1050,
+    "Regular Pack": 350,
+    "Hydrating Pack": 750,
+    "International Mask": 1250,
+    "Acne Mask": 550,
+    "Pigmentation Mask": 850
+  },
+  haircare:{
+    "Split Ends Remove": 650,
+    "Haircut Female": 550,
+    "Advance Hair Cut": 750,
+    "Colour Touch-Up Female": "750-950",
+    "Highlight for Female per strip": "350-450",
+    "Global Colour Shoulder Length": 2550,
+    "Global Colour Waist Length": 3550,
+    "Global Colour Lower Waist Length": 4550,
+    "Colour Application": 450,
+    "Global Fashion Colour Waist Length": 3050,
+    "Global Fashion Colour Shoulder Length": 4550,
+    "Global Fashion Colour Lower Waist Length": 5550,
+    "Smoothening Shoulder Length": 5550,
+    "Smoothening Middle Waist": 7550,
+    "Smoothening Lower Waist": 9550,
+    "Rebounding Shoulder Length": 7550,
+    "Rebounding Middle Waist": 7550,
+    "Rebounding Lower Middle Waist": 9550,
+    "Hair Relaxing": 5550,
+    "Kera Smooth": 7550,
+    "Kera Rebound": 8550,
+    "Rolling Style": 650,
+    "Tong Style": 750,
+    "Buns": 650,
+    "Ironing Curls": 750,
+    "Any Style": 750
+  },
+  ScalpHairTreatment:{
+    "Anti-Dandruff": 750,
+    "Anti-Hair Fall": 850,
+    "Hair Regrowth": 4550,
+    "Hair Hydrating": 1050,
+    "Split Ends Treatment": 750,
+    "Boost for Hydration": 1250,
+    "Ritual Treatment": 1750,
+    "Standalone Treatment": 2050,
+    "L’Oréal Spa": 1250,
+    "Keratin Spa": 2550
+  },
+  medicaltreatmentlaser:{
+    "Side Blocks": 2050,
+    "Upper Lips": 1050,
+    "Chin": 1050,
+    "Forehead": 1050,
+    "Underarms": 1050,
+    "Hands": 4050,
+    "Chest": 3050,
+    "Back (Upper)": 3050,
+    "Back (Lower)": 3050,
+    "Legs": 5050,
+    "Bikini": 1550,
+    "Abdomen": 3050,
+    "Full Face": 3550,
+    "Full Body": 5050,
+    "Complete package for 10 sessions": 75000
+  },
+  pampercare:{
+    "Nail Extension": 5550,
+    "Regular Manicure": 450,
+    "Regular Pedicure": 550,
+    "French Manicure": 650,
+    "Chocolate Manicure": 750,
+    "Chocolate Pedicure": 950,
+    "Aroma Deluxe Manicure": 650,
+    "Aroma Deluxe Pedicure": 750,
+    "Manicure Spa": 950,
+    "Pedicure Spa": 1050,
+    "De-Tan Manicure": 850,
+    "De-Tan Pedicure": 950,
+    "International Manicure Spa": 1250,
+    "International Pedicure Spa": 1550,
+    "Heel Peel Treatment Pedicure": 2050
   }
+  
+
+
+
 };
 
 const MALE_SERVICES = {
@@ -75,14 +250,161 @@ const MALE_SERVICES = {
     'Full Legs': 950,
     'Feet': 250,
     'Full Body': 1750
+  },
+  deTan: {
+      'Face': 450,
+      'Neck': 250,
+      'Face & Neck': 550,
+      'Full Arms': 850,
+      'Underarms': 250,
+      'Legs': 1150,
+      'Feet': 250,
+      'Half Legs': 850,
+      'Full Back': 850,
+      'Half Back': 450,
+      'Front': 850,
+      'Stomach': 450,
+      'Full Body (Excluded Bikini & Hips)': 2250
+  },
+  massage: {
+    "Body Massage with Vitamin C (60 Min)": 2550,
+    "Body Oil Massage with Potli (60 Min)": 3550,
+    "Body Massage with Olive (60 Min)": 2550,
+    "Body Steam (5-8 Min)": 550,
+    "Body Spa in Chocolate": 2850,
+    "Exotic Body Spa": 4550,
+    "Massage with Aroma Oil": 2000,
+    "Massage Head to Toe": 2550,
+    "Double Tissue Massage": 2550,
+    "Foot Massage": 550,
+    "Legs Massage": 1150,
+    "Hand Massage": 650,
+    "Shoulder Massage": 450,
+    "Back Massage": 750,
+    "Head Massage": 450
+  },
+  bodyPolishing:{
+    "Black Current": 3050,
+    "Watermelon": 2050,
+    "Cucumber": 2050,
+    "Orange And Peach": 2550,
+    "Strawberry": 2050,
+    "Chocolate": 3550,
+    "Stone Body Polish with Oil": 4550,
+    "Body Exfoliation": 1550,
+    "Body Detaining": 1550,
+    "Body Potli with Oil": 5550
+  },
+  skinCareFacial:{
+    "Regular Clean-Up": 850,
+    "Deep Cleansing": 450,
+    "Hydration Clean-Up": 950,
+    "Lubricant Clean-Up": 1250,
+    "De-tan Clean-Up": 950,
+    "Advance Clean-Up": 1250,
+    "International Clean-Up": 2050,
+    "Rejuvenation Facial": 1250,
+    "Herbal Facial": 1350,
+    "Fresh Fruit Facial": 1250,
+    "Fruit Facial": 1250,
+    "Radiance Facial": 1750,
+    "Chocolate Facial": 1750,
+    "Carbon Facial": 4550,
+    "Wine Facial": 2550,
+    "Vitamin C": 2550,
+    "Signature Facial": 2850,
+    "Experience Hydra Facial": 2550,
+    "Hydra Facial With Anti-Aging": 3550,
+    "Advance Hydra With Required": 5550
   }
+  ,
+  skinTreatment:{
+    "Lubricant Facial": 1550,
+    "Facial With Stone": 2500,
+    "Antiaging & Firming Facial": 2550
+  },
+  facepack:{
+    "De-Tan Pack": 450,
+    "Advance De-Tan Pack": 650,
+    "Glow Pack": 550,
+    "Tightening Pack": 1050,
+    "Regular Pack": 350,
+    "Hydrating Pack": 750,
+    "International Mask": 1250,
+    "Acne Mask": 550,
+    "Pigmentation Mask": 850
+  },
+  haircare:{
+    "Haircut Male": 350,
+    "Shaving Whole Head": 550,
+    "Advance Hair Cut Male": 550
+  },
+  ScalpHairTreatment:{
+    "Anti-Dandruff": 750,
+    "Anti-Hair Fall": 850,
+    "Hair Regrowth": 4550,
+    "Hair Hydrating": 1050,
+    "Split Ends Treatment": 750,
+    "Boost for Hydration": 1250,
+    "Ritual Treatment": 1750,
+    "Standalone Treatment": 2050,
+    "L’Oréal Spa": 1250,
+    "Keratin Spa": 2550
+  },
+  
+  medicaltreatmentlaser:{
+    "Side Blocks": 2050,
+    "Upper Lips": 1050,
+    "Chin": 1050,
+    "Forehead": 1050,
+    "Underarms": 1050,
+    "Hands": 4050,
+    "Chest": 3050,
+    "Back (Upper)": 3050,
+    "Back (Lower)": 3050,
+    "Legs": 5050,
+    "Bikini": 1550,
+    "Abdomen": 3050,
+    "Full Face": 3550,
+    "Full Body": 5050,
+    "Complete package for 10 sessions": 75000
+  }
+
+  
 };
 
 const BeautyServicesBooking = () => {
   const [selectedGender, setSelectedGender] = useState('female');
   const [selectedServices, setSelectedServices] = useState({
-    female: { threading: {}, wax: {}, bleach: {} },
-    male: { threading: {}, wax: {}, bleach: {} }
+    female: {
+      threading: {},
+      wax: {},
+      bleach: {},
+      deTan: {},
+      massage: {},
+      bodyPolishing: {},
+      skinCareFacial: {},
+      skinTreatment: {},
+      facepack: {},
+      haircare: {},
+      ScalpHairTreatment: {},
+      medicaltreatmentlaser: {},
+      pampercare: {}
+    },
+    male: {
+      threading: {},
+      wax: {},
+      bleach: {},
+      deTan: {},
+      massage: {},
+      bodyPolishing: {},
+      skinCareFacial: {},
+      skinTreatment: {},
+      facepack: {},
+      haircare: {},
+      ScalpHairTreatment: {},
+      medicaltreatmentlaser: {}
+    }
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -192,17 +514,34 @@ const BeautyServicesBooking = () => {
 
             {/* Services Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {['threading', 'wax', 'bleach'].map(category => (
-                <div key={category} className="bg-gray-50 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-4 capitalize">
-                    {category}
-                  </h3>
-                  <div className="space-y-1">
-                    {renderServiceCheckboxes(category)}
-                  </div>
-                </div>
-              ))}
-            </div>
+  {[
+    'threading', 
+    'wax', 
+    'bleach', 
+    'deTan', 
+    'massage', 
+    'bodyPolishing', 
+    'skinCareFacial', 
+    'skinTreatment', 
+    'facepack', 
+    'haircare', 
+    'ScalpHairTreatment', 
+    'medicaltreatmentlaser', 
+    'pampercare'
+  ].map(category => (
+    <div key={category} className="bg-gray-50 rounded-lg p-6">
+      <h3 className="text-lg font-semibold text-gray-800 mb-4 capitalize">
+        {category === 'deTan' ? 'De-Tan' : 
+         category === 'ScalpHairTreatment' ? 'Scalp Hair Treatment' : 
+         category === 'medicaltreatmentlaser' ? 'Medical Treatment Laser' : 
+         category}
+      </h3>
+      <div className="space-y-1">
+        {renderServiceCheckboxes(category)}
+      </div>
+    </div>
+  ))}
+</div>
 
             {/* Combined Services Notice */}
             {hasCombinedServices && (

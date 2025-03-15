@@ -1,100 +1,148 @@
-import React, { useEffect } from 'react';
-import { Box, Typography, Container, Grid, Paper, Card, CardContent, CardMedia } from '@mui/material';
+import React, { useEffect, useRef } from 'react';
+import { Box, Typography, Container, Grid } from '@mui/material';
 import { useLocation } from "react-router-dom";
+import { styled } from '@mui/material/styles';
 
-const HairCare = ({hairCourses}) => {
+// Styled components for symmetric cards
+const SymmetricCard = styled(Box)(({ theme }) => ({
+  height: '100%',
+  display: 'flex',
+  flexDirection: 'row', // Horizontal layout for full-width cards
+  borderRadius: theme.shape.borderRadius,
+  overflow: 'hidden',
+  boxShadow: theme.shadows[6],
+  backgroundColor: theme.palette.background.paper,
+  [theme.breakpoints.down('md')]: {
+    flexDirection: 'column', // Stack on mobile
+  }
+}));
+
+const SymmetricCardMedia = styled(Box)(({ theme }) => ({
+  width: '40%', // Fixed width for card images in desktop view
+  minHeight: 300, // Minimum height
+  overflow: 'hidden',
+  [theme.breakpoints.down('md')]: {
+    width: '100%',
+    height: 200,
+  }
+}));
+
+const SymmetricCardContent = styled(Box)(({ theme }) => ({
+  flexGrow: 1,
+  display: 'flex',
+  flexDirection: 'column',
+  padding: theme.spacing(4),
+  width: '60%', // Fixed width for content in desktop view
+  [theme.breakpoints.down('md')]: {
+    width: '100%',
+    padding: theme.spacing(3),
+  }
+}));
+
+const CourseTitle = styled(Typography)(({ theme }) => ({
+  marginBottom: theme.spacing(2),
+}));
+
+const CourseDescription = styled(Typography)(({ theme }) => ({
+  // No fixed height to allow content to flow naturally
+}));
+
+const HairCare = ({ hairCourses }) => {
   const location = useLocation();
+  const cardRefs = useRef([]);
+
+  // Create a proper mapping object
+  const scrollMapping = {
+    '/skincare/hydratingfacial': 0,
+    '/skincare/detan': 1,
+    '/skincare/Spa': 2,
+    '/skincare/antiaging': 3,
+    '/skincare/SkinTightning': 4,
+    '/skincare/pigmentation': 5,
+    '/skincare/brightening': 6,
+    '/slimming/fatreduction': 0,
+    '/slimming/cellulitetreatment': 1,
+    '/slimming/weightlossprogram': 2,
+    '/slimming/bodywraps': 3,
+    '/slimming/skintightening': 4,
+    '/slimming/slimmingconsultation': 5,
+    '/medicaltreatment/acne': 0,
+    '/medicaltreatment/antiage': 1,
+    '/medicaltreatment/pigmentation': 2,
+    '/medicaltreatment/hyperpigmentation': 3,
+    '/medicaltreatment/medicatedfacial': 4,
+    '/medicaltreatment/carbontretment': 5,
+    '/medicaltreatment/skinrejuvenation': 6,
+    '/medicaltreatment/vaginaltightening': 7,
+    '/laser/laserskinrejuvenation': 0,
+    '/laser/laserpigmentation': 1,
+    '/laser/laserscaremoval': 2,
+    '/laser/lasertattoremoval': 3,
+    '/laser/fractionalco2laser': 4,
+    '/haircare/styling': 0,
+    '/haircare/color': 1,
+    '/haircare/spa': 2,
+    '/haircare/kerasmooth': 3,
+    '/haircare/kerabond': 4,
+    '/haircare/botox': 5,
+    '/haircare/nanoplastiatreatment': 6,
+    '/haircare/hairpatch': 7,
+    '/haircare/hairextention': 8
+  };
 
   useEffect(() => {
-    const scrollMapping = {
-      '/skincare/hydratingfacial': 400,
-      '/skincare/detan': 800,
-      '/skincare/Spa': 1150,
-      '/skincare/antiaging': 1550,
-      '/skincare/SkinTightning': 1950,
-      '/skincare/pigmentation': 2350,
-      '/skincare/brightening': 2750,
-      '/slimming/fatreduction': 400,
-      '/slimming/cellulitetreatment': 800,
-      '/slimming/weightlossprogram': 1200,
-      '/slimming/bodywraps': 1600,
-      '/slimming/skintightening': 2000,
-      '/slimming/slimmingconsultation': 2400,
-      '/medicaltreatment/acne': 400,
-      '/medicaltreatment/antiage': 800,
-      '/medicaltreatment/pigmentation': 1200,
-      '/medicaltreatment/hyperpigmentation': 1600,
-      '/medicaltreatment/medicatedfacial': 2000,
-      '/medicaltreatment/carbontretment': 2400,
-      '/medicaltreatment/skinrejuvenation': 2800,
-      '/medicaltreatment/vaginaltightening': 3200,
-      '/laser/laserskinrejuvenation': 400,
-      '/laser/laserpigmentation': 800,
-      '/laser/laserscaremoval': 1200,
-      '/laser/lasertattoremoval': 1600,
-      '/laser/fractionalco2laser': 2000,
-    };
-    const scrollPosition = scrollMapping[location.pathname];
-    if (scrollPosition !== undefined) {
-      window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+    // Get the index from the mapping
+    const index = scrollMapping[location.pathname];
+    
+    // If we have a valid index and the ref exists, scroll to it
+    if (index !== undefined && cardRefs.current[index]) {
+      // Add a small delay to ensure DOM is fully rendered
+      setTimeout(() => {
+        cardRefs.current[index].scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'center' // Center the element in the viewport
+        });
+      }, 300);
     }
-    if (location.pathname === "/haircare/styling") {
-      window.scrollTo({ top: 400, behavior: "smooth" });
-    }
-
-    if (location.pathname === "/haircare/color") {
-      window.scrollTo({ top: 800, behavior: "smooth" });
-    }
-    if (location.pathname === "/haircare/spa") {
-      window.scrollTo({ top: 1150, behavior: "smooth" });
-    }
-    if (location.pathname === "/haircare/kerasmooth") {
-      window.scrollTo({ top: 1550, behavior: "smooth" });
-    }
-    if (location.pathname === "/haircare/kerabond") {
-      window.scrollTo({ top: 1950, behavior: "smooth" });
-    }
-
-    if (location.pathname === "/haircare/botox") {
-      window.scrollTo({ top: 2350, behavior: "smooth" });
-    }
-
-    if (location.pathname === "/haircare/nanoplastiatreatment") {
-      window.scrollTo({ top: 2750, behavior: "smooth" });
-    }
-    if (location.pathname === "/haircare/hairpatch") {
-      window.scrollTo({ top: 3050, behavior: "smooth" });
-    }
-    if (location.pathname === "/haircare/hairextention") {
-      window.scrollTo({ top: 3350, behavior: "smooth" });
-    }
-    // You can handle other paths if needed
   }, [location.pathname]);
+
+  // Initialize the refs array when courses change
+  useEffect(() => {
+    cardRefs.current = cardRefs.current.slice(0, hairCourses.length);
+  }, [hairCourses]);
 
   return (
     <Container maxWidth="lg" sx={{ py: 8 }}>
       <Grid container spacing={4}>
         {hairCourses.map((course, index) => (
-          <Grid item xs={12} sm={12} md={12} key={index}>
-            <Card>
-              <CardMedia
-                component="img"
-                height="200"
-                image={course.imageUrl}
-                alt={course.title}
-              />
-              <CardContent>
-                <Typography variant="h5" component="div" gutterBottom>
+          <Grid 
+            item 
+            xs={12} 
+            key={index}
+            ref={el => cardRefs.current[index] = el}
+            id={`haircare-item-${index}`}
+          >
+            <SymmetricCard>
+              <SymmetricCardMedia>
+                <img 
+                  src={course.imageUrl} 
+                  alt={course.title}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover'
+                  }}
+                />
+              </SymmetricCardMedia>
+              <SymmetricCardContent>
+                <CourseTitle variant="h5" component="div">
                   {course.title}
-                </Typography>
-                <Typography variant="body1" color="text.secondary">
+                </CourseTitle>
+                <CourseDescription variant="body1" color="text.secondary">
                   {course.description}
-                </Typography>
-                <Box mt={2}>
-                
-                </Box>
-              </CardContent>
-            </Card>
+                </CourseDescription>
+              </SymmetricCardContent>
+            </SymmetricCard>
           </Grid>
         ))}
       </Grid>

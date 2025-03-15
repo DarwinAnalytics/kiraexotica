@@ -29,6 +29,29 @@ const GradientBackground = styled(Box)(({ theme }) => ({
   padding: theme.spacing(6, 0)
 }));
 
+// Styled components for the symmetric cards
+const SymmetricCard = styled(Card)(({ theme }) => ({
+  height: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  borderRadius: theme.shape.borderRadius,
+  overflow: 'hidden'
+}));
+
+const SymmetricCardMedia = styled(CardMedia)(({ theme }) => ({
+  height: 250, // Fixed height for all card images
+  width: '100%', // Full width
+  objectFit: 'cover'
+}));
+
+const SymmetricCardContent = styled(CardContent)(({ theme }) => ({
+  flexGrow: 1,
+  display: 'flex',
+  flexDirection: 'column',
+  padding: theme.spacing(2),
+  height: 150 // Fixed height for card content
+}));
+
 const AboutUs = () => {
   return (
     <GradientBackground>
@@ -57,29 +80,27 @@ const AboutUs = () => {
             </Typography>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Card elevation={6}>
-              <CardMedia
-              className='h-96'
+            <SymmetricCard elevation={6}>
+              <SymmetricCardMedia
                 component="img"
-                height="250"
                 image={salonInteriorImage}
                 alt="Kira Exotica Salon Interior"
               />
-            </Card>
+            </SymmetricCard>
           </Grid>
         </Grid>
 
         {/* Founder Section */}
         <Grid container spacing={4} sx={{ mb: 6 }}>
           <Grid item xs={12} md={5}>
-            <Card elevation={6}>
-              <CardMedia
+            <SymmetricCard elevation={6}>
+              <SymmetricCardMedia
                 component="img"
-                height="500"
+                sx={{ height: 400 }} // Specific override for founder image
                 image={founderImage}
                 alt="Poonam Chauhan"
               />
-            </Card>
+            </SymmetricCard>
           </Grid>
           <Grid item xs={12} md={7}>
             <Typography variant="h4" gutterBottom>
@@ -106,120 +127,64 @@ const AboutUs = () => {
           Our Signature Treatments
         </Typography>
         <Grid container spacing={4}>
-          <Grid item xs={12} md={3}>
-            <Card elevation={6}>
-              <CardMedia
-                component="img"
-                height="250"
-                image={serviceImage1}
-                alt="Chemical Peels"
-              />
-              <CardContent>
-                <Typography variant="h6">Chemical Peels</Typography>
-                <Typography variant="body2">
-                  Transform your skin with customized treatments targeting pigmentation, 
-                  acne scars, and dullness for a radiant complexion.
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={12} md={3}>
-            <Card elevation={6}>
-              <CardMedia
-                component="img"
-                height="250"
-                image={serviceImage2}
-                alt="Meso Treatments"
-              />
-              <CardContent>
-                <Typography variant="h6">Meso Treatments</Typography>
-                <Typography variant="body2">
-                  Revitalize your skin at the cellular level, enhancing hydration, 
-                  improving elasticity, and restoring a youthful glow.
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={12} md={3}>
-            <Card elevation={6}>
-              <CardMedia
-                component="img"
-                height="250"
-                image={serviceImage3}
-                alt="Collagen Treatments"
-              />
-              <CardContent>
-                <Typography variant="h6">Collagen Treatments</Typography>
-                <Typography variant="body2">
-                  Boost your skin's natural collagen for improved firmness, 
-                  texture, and radiant appearance.
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={12} md={3}>
-            <Card elevation={6}>
-              <CardMedia
-                component="img"
-                height="250"
-                image={serviceImage4}
-                alt="Anti-Aging Expertise"
-              />
-              <CardContent>
-                <Typography variant="h6">Anti-Aging Expertise</Typography>
-                <Typography variant="body2">
-                  Tailored solutions addressing fine lines, wrinkles, and sagging skin, 
-                  helping you look your best at any age.
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
+          {/* Service cards - now using symmetric styling */}
+          {[
+            { image: serviceImage1, title: "Chemical Peels", description: "Transform your skin with customized treatments targeting pigmentation, acne scars, and dullness for a radiant complexion." },
+            { image: serviceImage2, title: "Meso Treatments", description: "Revitalize your skin at the cellular level, enhancing hydration, improving elasticity, and restoring a youthful glow." },
+            { image: serviceImage3, title: "Collagen Treatments", description: "Boost your skin's natural collagen for improved firmness, texture, and radiant appearance." },
+            { image: serviceImage4, title: "Anti-Aging Expertise", description: "Tailored solutions addressing fine lines, wrinkles, and sagging skin, helping you look your best at any age." }
+          ].map((service, index) => (
+            <Grid item xs={12} sm={6} md={3} key={index}>
+              <SymmetricCard elevation={6}>
+                <SymmetricCardMedia
+                  component="img"
+                  image={service.image}
+                  alt={service.title}
+                />
+                <SymmetricCardContent>
+                  <Typography variant="h6" gutterBottom>{service.title}</Typography>
+                  <Typography variant="body2">
+                    {service.description}
+                  </Typography>
+                </SymmetricCardContent>
+              </SymmetricCard>
+            </Grid>
+          ))}
         </Grid>
 
         {/* Advanced Technologies Section */}
-        <Box sx={{ mt: 6, p: 4, bgcolor: 'background.paper', borderRadius: 2 }}>
-          <Typography variant="h5" align="center" gutterBottom>
-            Advanced Skincare Technologies
-          </Typography>
-          <List>
-            <ListItem>
-              <ListItemIcon>
-                <StarIcon color="primary" />
-              </ListItemIcon>
-              <ListItemText 
-                primary="Hydra Facials" 
-                secondary="Deep cleansing and hydration treatments"
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <StarIcon color="primary" />
-              </ListItemIcon>
-              <ListItemText 
-                primary="MNRF Therapy" 
-                secondary="Micro Needling Radiofrequency for skin rejuvenation"
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <StarIcon color="primary" />
-              </ListItemIcon>
-              <ListItemText 
-                primary="Laser Treatments" 
-                secondary="Precision treatments for various skin concerns"
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <StarIcon color="primary" />
-              </ListItemIcon>
-              <ListItemText 
-                primary="Weight Management & Body Contouring" 
-                secondary="Precise Weight Management & Body Contouring"
-              />
-            </ListItem>
-          </List>
-        </Box>
+        <Typography variant="h4" align="center" sx={{ mt: 6, mb: 4 }}>
+          Advanced Skincare Technologies
+        </Typography>
+        <Grid container spacing={4}>
+          {/* Advanced technology cards - using symmetric styling */}
+          {[
+            { title: "Hydra Facials", description: "Deep cleansing and hydration treatments for immediate skin rejuvenation and lasting results." },
+            { title: "MNRF Therapy", description: "Micro Needling Radiofrequency for skin rejuvenation, tightening, and scar reduction." },
+            { title: "Laser Treatments", description: "Precision treatments for various skin concerns including pigmentation, hair removal, and texture refinement." },
+            { title: "Weight Management & Body Contouring", description: "Scientific approach to weight loss and body sculpting for a harmonious silhouette." }
+          ].map((tech, index) => (
+            <Grid item xs={12} sm={6} md={3} key={index}>
+              <SymmetricCard elevation={6}>
+                <Box sx={{ 
+                  height: 250, 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  bgcolor: 'primary.light'
+                }}>
+                  <StarIcon sx={{ fontSize: 80, color: 'white' }} />
+                </Box>
+                <SymmetricCardContent>
+                  <Typography variant="h6" gutterBottom>{tech.title}</Typography>
+                  <Typography variant="body2">
+                    {tech.description}
+                  </Typography>
+                </SymmetricCardContent>
+              </SymmetricCard>
+            </Grid>
+          ))}
+        </Grid>
 
         {/* Mission Statement */}
         <Box textAlign="center" sx={{ mt: 6, p: 4, bgcolor: 'background.paper', borderRadius: 2 }}>

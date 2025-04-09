@@ -24,7 +24,7 @@ const FranchiseInquiryForm = () => {
   return (
     <form onSubmit={handleSubmit} className="space-y-8 bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl shadow-lg">
       <div className="text-center space-y-2">
-        <h2 className="text-4xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+        <h2 className="text-4xl font-semibold bg-clip-text text-black bg-gradient-to-r from-blue-600 to-purple-600">
           Begin Your Success Story
         </h2>
         <p className="text-gray-600">Join our network of successful entrepreneurs</p>
@@ -78,7 +78,7 @@ const FranchiseInquiryForm = () => {
       </div>
       
       <div className="space-y-2">
-        <label className="text-sm font-medium text-gray-700">Investment Range</label>
+        <label className="text-sm font-medium text-black-700">Investment Range</label>
         <input
           type="text"
           name="investment"
@@ -90,7 +90,7 @@ const FranchiseInquiryForm = () => {
 
       <button
         type="submit"
-        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-6 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center justify-center space-x-2 group"
+        className="w-full bg-black text-white py-4 px-6 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center justify-center space-x-2 group"
       >
         <span>Submit Your Application</span>
         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
@@ -104,7 +104,7 @@ const SalonFranchiseApp = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <div className="relative h-screen">
-        <div className="absolute inset-0 bg-gradient-to-br from-black/70 to-purple-900/50 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-black mix-blend-multiply"></div>
         <img
           src="/api/placeholder/1920/1080"
           alt="Luxury Salon Interior"
@@ -130,15 +130,15 @@ const SalonFranchiseApp = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center p-8 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100">
-            <div className="text-4xl font-bold text-blue-600 mb-2">₹27,000 Cr</div>
+            <div className="text-4xl font-bold text-black-600 mb-2">₹27,000 Cr</div>
             <p className="text-gray-600">Industry Value</p>
           </div>
           <div className="text-center p-8 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100">
-            <div className="text-4xl font-bold text-purple-600 mb-2">25%</div>
+            <div className="text-4xl font-bold text-black-600 mb-2">25%</div>
             <p className="text-gray-600">Annual Growth Rate</p>
           </div>
           <div className="text-center p-8 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100">
-            <div className="text-4xl font-bold text-blue-600 mb-2">200+</div>
+            <div className="text-4xl font-bold text-black-600 mb-2">200+</div>
             <p className="text-gray-600">Active Franchises</p>
           </div>
         </div>
@@ -148,7 +148,7 @@ const SalonFranchiseApp = () => {
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+            <h2 className="text-4xl font-bold mb-4 bg-clip-text text-black bg-gradient-to-r from-blue-600 to-purple-600">
               Why Partner With Us
             </h2>
             <p className="text-xl text-gray-600">Join the future of beauty and wellness</p>
@@ -157,22 +157,22 @@ const SalonFranchiseApp = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { 
-                icon: <TrendingUp className="w-8 h-8 text-blue-600" />,
+                icon: <TrendingUp className="w-8 h-8 text-black-600" />,
                 title: 'Premium Returns',
                 description: 'High-margin business model with consistent revenue streams'
               },
               {
-                icon: <Star className="w-8 h-8 text-purple-600" />,
+                icon: <Star className="w-8 h-8 text-black-600" />,
                 title: 'Brand Loyalty',
                 description: 'Strong customer retention through excellence in service'
               },
               {
-                icon: <HeartHandshake className="w-8 h-8 text-blue-600" />,
+                icon: <HeartHandshake className="w-8 h-8 text-black-600" />,
                 title: 'Complete Support',
                 description: 'Comprehensive training and operational guidance'
               },
               {
-                icon: <Users className="w-8 h-8 text-purple-600" />,
+                icon: <Users className="w-8 h-8 text-black-600" />,
                 title: 'Strategic Growth',
                 description: 'Optimized expansion strategy with maximum returns'
               }
@@ -188,7 +188,7 @@ const SalonFranchiseApp = () => {
       </section>
 
       {/* Benefits */}
-      <section className="py-20 px-4 bg-gradient-to-br from-gray-900 to-blue-900 text-white">
+      <section className="py-20 px-4 bg-black text-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold mb-16 text-center">Partnership Benefits</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

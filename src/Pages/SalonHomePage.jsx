@@ -63,7 +63,7 @@ const theme = createTheme({
 
 // Advanced styled components
 const GradientBackground = styled(Box)(({ theme }) => ({
-  background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, #8C52FF 100%)`,
+  background: 'black',
   color: 'white',
   position: 'relative',
   overflow: 'hidden',
@@ -74,7 +74,6 @@ const GradientBackground = styled(Box)(({ theme }) => ({
 const ServiceCard = styled(Card)(({ theme }) => ({
   height: '100%',
   borderRadius: theme.spacing(3),
-  transition: 'all 0.4s ease-in-out',
   boxShadow: '0 15px 30px rgba(0,0,0,0.1)',
   overflow: 'hidden',
   '&:hover': {
@@ -86,15 +85,9 @@ const ServiceCard = styled(Card)(({ theme }) => ({
 const AnimatedServiceOverlay = styled(Box)(({ theme }) => ({
   position: 'absolute',
   bottom: 0,
-  left: 0,
-  right: 0,
+  left:15,
+
   background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)',
-  padding: theme.spacing(2),
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'flex-end',
-  color: 'white',
-  transition: 'opacity 0.3s ease-in-out'
 }));
 
 const SalonHomePage = () => {
@@ -105,26 +98,26 @@ const SalonHomePage = () => {
       title: "Hair Care", 
       description: "Personalized styling with cutting-edge techniques",
       icon: <BrushIcon sx={{ fontSize: 64, color: 'white' }} />,
-      image: "/api/placeholder/800/600"
+      image: "/images/haircarehome.png"
     },
     { 
       title: "Skin Care", 
       description: "Holistic treatments for complete rejuvenation",
       icon: <SpaIcon sx={{ fontSize: 64, color: 'white' }} />,
-      image: "/api/placeholder/800/600"
+      image: "/images/skin care home.png"
     },
     { 
       title: "Pamper Care", 
       description: "Curated looks for your most memorable moments",
       icon: <StarIcon sx={{ fontSize: 64, color: 'white' }} />,
-      image: "/api/placeholder/800/600"
+      image: "/images/pamper care home.png"
     }
     ,
     { 
       title: "Makeup", 
       description: "Curated looks for your most memorable moments",
       icon: <StarIcon sx={{ fontSize: 64, color: 'white' }} />,
-      image: "/api/placeholder/800/600"
+      image: "public/images/make up home.png"
     }
     ,
     { 
@@ -189,13 +182,12 @@ const SalonHomePage = () => {
                 <Box sx={{ display: 'flex', gap: 2 }}>
                   <Button 
                     variant="contained" 
-                    color="secondary"
                     endIcon={<ArrowIcon />}
                     sx={{ 
                       px: 4, 
                       py: 1.5,
                       backgroundColor: 'white',
-                      color: theme.palette.primary.main,
+                      color: 'black',
                       '&:hover': {
                         backgroundColor: 'rgba(255,255,255,0.9)'
                       }
@@ -213,24 +205,24 @@ const SalonHomePage = () => {
                         <Box sx={{ position: 'relative', height: 150 }}>
                           <CardMedia
                             component="img"
-                            height="100%"
+                            height="80%"
                             image={service.image}
                             alt={service.title}
                             sx={{ 
                               position: 'absolute',
                               top: 0,
                               left: 0,
-                              width: '100%',
-                              height: '100%',
+                              width: '80%',
+                              height: '80%',
                               objectFit: 'cover'
                             }}
                           />
-                          <AnimatedServiceOverlay>
+                          <AnimatedServiceOverlay
+                          >
                             {/* {service.icon} */}
                             <Typography 
                               variant="subtitle1" 
                               sx={{ 
-                                mt: 1, 
                                 fontWeight: 'bold',
                                 color: 'white'
                               }}

@@ -24,7 +24,7 @@ const serviceImage3 = '/images/collagen.jpg';
 const serviceImage4 = '/images/antiagingservice.jpg';
 
 const GradientBackground = styled(Box)(({ theme }) => ({
-  background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
+  background: 'white',
   minHeight: '100vh',
   padding: theme.spacing(6, 0)
 }));
@@ -52,6 +52,11 @@ const SymmetricCardContent = styled(CardContent)(({ theme }) => ({
   height: 150 // Fixed height for card content
 }));
 
+// New styled component for justified text
+const JustifiedTypography = styled(Typography)(({ theme }) => ({
+  textAlign: 'justify'
+}));
+
 const AboutUs = () => {
   return (
     <GradientBackground>
@@ -64,7 +69,7 @@ const AboutUs = () => {
               component="h1" 
               gutterBottom 
               fontWeight="bold"
-              color="primary.main"
+              color=""
             >
               Kira Exotica
               <Typography variant="h5" color="text.secondary">
@@ -127,7 +132,7 @@ const AboutUs = () => {
           Our Signature Treatments
         </Typography>
         <Grid container spacing={4}>
-          {/* Service cards - now using symmetric styling */}
+          {/* Service cards - now using justified text for descriptions */}
           {[
             { image: serviceImage1, title: "Chemical Peels", description: "Transform your skin with customized treatments targeting pigmentation, acne scars, and dullness for a radiant complexion." },
             { image: serviceImage2, title: "Meso Treatments", description: "Revitalize your skin at the cellular level, enhancing hydration, improving elasticity, and restoring a youthful glow." },
@@ -143,9 +148,9 @@ const AboutUs = () => {
                 />
                 <SymmetricCardContent>
                   <Typography variant="h6" gutterBottom>{service.title}</Typography>
-                  <Typography variant="body2">
+                  <JustifiedTypography variant="body2">
                     {service.description}
-                  </Typography>
+                  </JustifiedTypography>
                 </SymmetricCardContent>
               </SymmetricCard>
             </Grid>
@@ -157,7 +162,7 @@ const AboutUs = () => {
           Advanced Skincare Technologies
         </Typography>
         <Grid container spacing={4}>
-          {/* Advanced technology cards - using symmetric styling */}
+          {/* Advanced technology cards - using justified text for descriptions */}
           {[
             { title: "Hydra Facials", description: "Deep cleansing and hydration treatments for immediate skin rejuvenation and lasting results." },
             { title: "MNRF Therapy", description: "Micro Needling Radiofrequency for skin rejuvenation, tightening, and scar reduction." },
@@ -177,9 +182,9 @@ const AboutUs = () => {
                 </Box>
                 <SymmetricCardContent>
                   <Typography variant="h6" gutterBottom>{tech.title}</Typography>
-                  <Typography variant="body2">
+                  <JustifiedTypography variant="body2">
                     {tech.description}
-                  </Typography>
+                  </JustifiedTypography>
                 </SymmetricCardContent>
               </SymmetricCard>
             </Grid>

@@ -11,7 +11,7 @@ const Footer = () => {
   };
 
   return (
-    <Box component="footer" py={4} bgcolor="primary.main" color="white">
+    <Box component="footer" py={4} bgcolor="black" color="white">
       <Grid container justifyContent="space-between" alignItems="center">
         <Grid item>
           <Typography variant="body2">

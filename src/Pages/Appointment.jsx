@@ -8,7 +8,7 @@ const Appointment = () => {
     {
       icon: <Clock className="h-6 w-6" />,
       title: "Flexible Hours",
-      description: "Open daily 10:00 AM - 7:00 PM"
+      description: "Open daily 10:00 AM - 8:00 PM"
     },
     {
       icon: <Phone className="h-6 w-6" />,
@@ -57,7 +57,7 @@ const Appointment = () => {
               <div>
                 <h2 className="text-2xl font-semibold text-white mb-2">Salon Hours</h2>
                 <p className="text-gray-400">Monday to Sunday</p>
-                <p className="text-purple-400 font-semibold">10:00 AM - 7:00 PM</p>
+                <p className="text-purple-400 font-semibold">10:00 AM - 8:00 PM</p>
               </div>
               <div className="hidden md:block">
                 <div className="flex gap-1">
@@ -87,8 +87,8 @@ const Appointment = () => {
             {/* Action Button */}
             <button
               onClick={() => setIsChatOpen(true)}
-              className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 rounded-lg 
-                       hover:from-purple-700 hover:to-blue-700 transition-all duration-200 
+              className="w-full bg-white  py-4 rounded-lg 
+                        transition-all duration-200 
                        flex items-center justify-center gap-2 group"
             >
               <MessageCircle className="h-5 w-5" />

@@ -24,26 +24,29 @@ const SymmetricCardContent = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   padding: theme.spacing(3),
-  height: 240, // Increased height to prevent overlapping
+  minHeight: 280, // Increased minimum height to accommodate content
   position: 'relative'
 }));
 
 const CourseTitle = styled(Typography)(({ theme }) => ({
-  height: 64,
+  minHeight: 60,
   overflow: 'hidden',
   display: '-webkit-box',
   WebkitLineClamp: 2,
   WebkitBoxOrient: 'vertical',
-  marginBottom: theme.spacing(1.5) // Increased spacing
+  marginBottom: theme.spacing(2) // Increased spacing
 }));
 
+// Improved CourseDescription with better visibility and justified text
 const CourseDescription = styled(Typography)(({ theme }) => ({
-  height: 72, // Increased height for description
-  overflow: 'hidden',
-  display: '-webkit-box',
-  WebkitLineClamp: 3,
-  WebkitBoxOrient: 'vertical',
-  marginBottom: theme.spacing(8) // Increased spacing for info section
+  marginBottom: theme.spacing(10), // Increased spacing for info section
+  overflow: 'visible', // Show all content by default
+  lineHeight: 1.6, // Improved line height for readability
+  color: theme.palette.text.primary, // Darker text for better visibility
+  textAlign: 'justify', // MS Word-like justified text
+  '& p': {
+    margin: 0, // Remove default paragraph margins
+  }
 }));
 
 const CourseInfo = styled(Box)(({ theme }) => ({
@@ -53,12 +56,20 @@ const CourseInfo = styled(Box)(({ theme }) => ({
   left: 0,
   padding: theme.spacing(0, 3),
   borderTop: `1px solid ${theme.palette.divider}`,
-  paddingTop: theme.spacing(2)
+  paddingTop: theme.spacing(2),
+  backgroundColor: theme.palette.background.paper, // Ensure background color matches the card
 }));
 
 const HairCourses = ({ hairCourses }) => {
   return (
     <Container maxWidth="lg" sx={{ py: 8 }}>
+      <Typography variant="h3" component="h1" align="center" gutterBottom>
+        Hair Styling Courses
+      </Typography>
+      <Typography variant="subtitle1" align="center" color="text.secondary" paragraph sx={{ mb: 6 }}>
+        Explore our professional hair styling courses designed to elevate your skills
+      </Typography>
+      
       <Grid container spacing={4}>
         {hairCourses.map((course, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
@@ -75,19 +86,31 @@ const HairCourses = ({ hairCourses }) => {
                 />
               </SymmetricCardMedia>
               <SymmetricCardContent>
-                <CourseTitle variant="h5" component="div">
+                <CourseTitle variant="h5" component="h2">
                   {course.title}
                 </CourseTitle>
-                <CourseDescription variant="body2" color="text.secondary">
+                <CourseDescription variant="body1">
                   {course.description}
                 </CourseDescription>
                 <CourseInfo>
-                  <Typography variant="body1" color="text.primary" sx={{ fontWeight: 'medium' }}>
-                    Duration: {course.duration}
-                  </Typography>
-                  <Typography variant="body1" color="text.primary" sx={{ fontWeight: 'medium' }}>
-                    Fee: {course.fee}
-                  </Typography>
+                  <Grid container spacing={1}>
+                    <Grid item xs={6}>
+                      <Typography variant="body2" color="text.secondary">
+                        Duration
+                      </Typography>
+                      <Typography variant="body1" fontWeight="medium">
+                        {course.duration}
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <Typography variant="body2" color="text.secondary">
+                        Fee
+                      </Typography>
+                      <Typography variant="body1" fontWeight="medium">
+                        {course.fee}
+                      </Typography>
+                    </Grid>
+                  </Grid>
                 </CourseInfo>
               </SymmetricCardContent>
             </SymmetricCard>

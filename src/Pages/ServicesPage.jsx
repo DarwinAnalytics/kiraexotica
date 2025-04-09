@@ -51,7 +51,7 @@ const ServicesPage = () => {
   const services = [
     {
       title: "Hair Styling",
-      icon: <BrushIcon color="primary" sx={{ fontSize: 64 }} />,
+      // icon: <BrushIcon color="" sx={{ fontSize: 64 }} />,
       description: "Personalized cutting, styling, and transformative hair treatments.",
       image: "/api/placeholder/800/600",
       details: [
@@ -63,7 +63,7 @@ const ServicesPage = () => {
     },
     {
       title: "Spa Wellness",
-      icon: <SpaIcon color="primary" sx={{ fontSize: 64 }} />,
+      // icon: <SpaIcon color="" sx={{ fontSize: 64 }} />,
       description: "Holistic wellness treatments for complete mind-body rejuvenation.",
       image: "/api/placeholder/800/600",
       details: [
@@ -75,7 +75,7 @@ const ServicesPage = () => {
     },
     {
       title: "Makeup & Bridal",
-      icon: <CameraIcon color="primary" sx={{ fontSize: 64 }} />,
+      // icon: <CameraIcon color="" sx={{ fontSize: 64 }} />,
       description: "Professional makeup artistry for every occasion and life moment.",
       image: "/api/placeholder/800/600",
       details: [
@@ -87,7 +87,7 @@ const ServicesPage = () => {
     },
     {
       title: "Skin Care",
-      icon: <FaceIcon color="primary" sx={{ fontSize: 64 }} />,
+      // icon: <FaceIcon color="" sx={{ fontSize: 64 }} />,
       description: "Advanced skincare treatments tailored to your unique skin needs.",
       image: "/api/placeholder/800/600",
       details: [
@@ -143,7 +143,7 @@ const ServicesPage = () => {
                       <Button 
                         key={idx} 
                         variant="outlined" 
-                        color="primary" 
+                        color="" 
                         size="small"
                         sx={{ 
                           borderRadius: 2, 

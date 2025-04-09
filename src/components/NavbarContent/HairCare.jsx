@@ -44,7 +44,8 @@ const CourseTitle = styled(Typography)(({ theme }) => ({
 }));
 
 const CourseDescription = styled(Typography)(({ theme }) => ({
-  // No fixed height to allow content to flow naturally
+  // Add text justification like MS Word
+  textAlign: 'justify',
 }));
 
 const HairCare = ({ hairCourses }) => {

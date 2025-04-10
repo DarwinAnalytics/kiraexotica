@@ -53,7 +53,7 @@ const ServicesPage = () => {
       title: "Hair Styling",
       // icon: <BrushIcon color="" sx={{ fontSize: 64 }} />,
       description: "Personalized cutting, styling, and transformative hair treatments.",
-      image: "/api/placeholder/800/600",
+      image: "/images/hairstyle home2.jpg",
       details: [
         "Precision Cuts",
         "Color Treatments",
@@ -65,7 +65,7 @@ const ServicesPage = () => {
       title: "Spa Wellness",
       // icon: <SpaIcon color="" sx={{ fontSize: 64 }} />,
       description: "Holistic wellness treatments for complete mind-body rejuvenation.",
-      image: "/api/placeholder/800/600",
+      image: "/images/sap wellness home.jpg",
       details: [
         "Massage Therapy",
         "Facial Treatments",
@@ -77,7 +77,7 @@ const ServicesPage = () => {
       title: "Makeup & Bridal",
       // icon: <CameraIcon color="" sx={{ fontSize: 64 }} />,
       description: "Professional makeup artistry for every occasion and life moment.",
-      image: "/api/placeholder/800/600",
+      image: "/images/bridal home.jpg",
       details: [
         "Bridal Makeup",
         "Photoshoot Styling",
@@ -89,7 +89,7 @@ const ServicesPage = () => {
       title: "Skin Care",
       // icon: <FaceIcon color="" sx={{ fontSize: 64 }} />,
       description: "Advanced skincare treatments tailored to your unique skin needs.",
-      image: "/api/placeholder/800/600",
+      image: "/images/skincare 2 home.jpg",
       details: [
         "Facial Treatments",
         "Chemical Peels",

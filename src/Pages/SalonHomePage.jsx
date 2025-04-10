@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
   Container, 
   Typography, 
@@ -13,7 +13,6 @@ import {
   useMediaQuery,
   Avatar
 } from '@mui/material';
-import { styled } from '@mui/system';
 import { 
   Spa as SpaIcon, 
   Brush as BrushIcon, 
@@ -61,35 +60,6 @@ const theme = createTheme({
   }
 });
 
-// Advanced styled components
-const GradientBackground = styled(Box)(({ theme }) => ({
-  background: 'black',
-  color: 'white',
-  position: 'relative',
-  overflow: 'hidden',
-  padding: theme.spacing(10, 0),
-  borderRadius: theme.spacing(4)
-}));
-
-const ServiceCard = styled(Card)(({ theme }) => ({
-  height: '100%',
-  borderRadius: theme.spacing(3),
-  boxShadow: '0 15px 30px rgba(0,0,0,0.1)',
-  overflow: 'hidden',
-  '&:hover': {
-    transform: 'scale(1.03)',
-    boxShadow: '0 20px 40px rgba(0,0,0,0.15)'
-  }
-}));
-
-const AnimatedServiceOverlay = styled(Box)(({ theme }) => ({
-  position: 'absolute',
-  bottom: 0,
-  left:15,
-
-  background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)',
-}));
-
 const SalonHomePage = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -98,40 +68,37 @@ const SalonHomePage = () => {
       title: "Hair Care", 
       description: "Personalized styling with cutting-edge techniques",
       icon: <BrushIcon sx={{ fontSize: 64, color: 'white' }} />,
-      image: "/images/haircarehome.png"
+      image: "/images/haircarehome copy.jpg"
     },
     { 
       title: "Skin Care", 
       description: "Holistic treatments for complete rejuvenation",
       icon: <SpaIcon sx={{ fontSize: 64, color: 'white' }} />,
-      image: "/images/skin care home.png"
+      image: "/images/skin care home.jpg"
     },
     { 
       title: "Pamper Care", 
       description: "Curated looks for your most memorable moments",
       icon: <StarIcon sx={{ fontSize: 64, color: 'white' }} />,
-      image: "/images/pamper care home.png"
-    }
-    ,
+      image: "/images/pamper care home.jpg"
+    },
     { 
       title: "Makeup", 
       description: "Curated looks for your most memorable moments",
       icon: <StarIcon sx={{ fontSize: 64, color: 'white' }} />,
-      image: "public/images/make up home.png"
-    }
-    ,
+      image: "/images/makeup home.jpg"
+    },
     { 
       title: "Medical Treatment", 
       description: "Curated looks for your most memorable moments",
       icon: <StarIcon sx={{ fontSize: 64, color: 'white' }} />,
-      image: "/api/placeholder/800/600"
-    }
-    ,
+      image: "/images/medicalhome.jpg"
+    },
     { 
       title: "Laser Treatment", 
       description: "Curated looks for your most memorable moments",
       icon: <StarIcon sx={{ fontSize: 64, color: 'white' }} />,
-      image: "/api/placeholder/800/600"
+      image: "/images/laserhome.jpg"
     }
   ];
 
@@ -154,7 +121,14 @@ const SalonHomePage = () => {
     <ThemeProvider theme={theme}>
       {/* Hero Section */}
       <Container maxWidth="lg" sx={{ py: 8 }}>
-        <GradientBackground>
+        <Box sx={{ 
+          background: 'black', 
+          color: 'white', 
+          position: 'relative', 
+          overflow: 'hidden', 
+          padding: theme.spacing(10, 0), 
+          borderRadius: theme.spacing(4)
+        }}>
           <Container>
             <Grid container spacing={4} alignItems="center">
               <Grid item xs={12} md={6}>
@@ -198,47 +172,63 @@ const SalonHomePage = () => {
                 </Box>
               </Grid>
               <Grid item xs={12} md={6}>
-                <Grid container spacing={3}>
+                <Grid container spacing={2}>
                   {services.map((service, index) => (
-                    <Grid item xs={12} md={4} sm={4} key={index}>
-                      <ServiceCard elevation={0}>
+                    <Grid item xs={6} sm={4} key={index}>
+                      <Card 
+                        sx={{ 
+                          height: '100%',
+                          borderRadius: theme.spacing(3),
+                          boxShadow: '0 15px 30px rgba(0,0,0,0.1)',
+                          overflow: 'hidden',
+                          transition: 'all 0.3s ease',
+                          '&:hover': {
+                            transform: 'translateY(-5px)',
+                            boxShadow: '0 20px 40px rgba(0,0,0,0.15)'
+                          }
+                        }}
+                      >
                         <Box sx={{ position: 'relative', height: 150 }}>
                           <CardMedia
                             component="img"
-                            height="80%"
                             image={service.image}
                             alt={service.title}
                             sx={{ 
-                              position: 'absolute',
-                              top: 0,
-                              left: 0,
-                              width: '80%',
-                              height: '80%',
+                              height: '100%',
+                              width: '100%',
                               objectFit: 'cover'
                             }}
                           />
-                          <AnimatedServiceOverlay
+                          <Box
+                            sx={{
+                              position: 'absolute',
+                              bottom: 0,
+                              left: 0,
+                              right: 0,
+                              background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)',
+                              padding: theme.spacing(2, 1, 1, 1),
+                            }}
                           >
-                            {/* {service.icon} */}
                             <Typography 
                               variant="subtitle1" 
                               sx={{ 
                                 fontWeight: 'bold',
-                                color: 'white'
+                                color: 'white',
+                                textAlign: 'center'
                               }}
                             >
                               {service.title}
                             </Typography>
-                          </AnimatedServiceOverlay>
+                          </Box>
                         </Box>
-                      </ServiceCard>
+                      </Card>
                     </Grid>
                   ))}
                 </Grid>
               </Grid>
             </Grid>
           </Container>
-        </GradientBackground>
+        </Box>
       </Container>
 
       {/* Testimonials Section */}

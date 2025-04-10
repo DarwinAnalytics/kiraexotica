@@ -164,10 +164,10 @@ const AboutUs = () => {
         <Grid container spacing={4}>
           {/* Advanced technology cards - using justified text for descriptions */}
           {[
-            { title: "Hydra Facials", description: "Deep cleansing and hydration treatments for immediate skin rejuvenation and lasting results." },
-            { title: "MNRF Therapy", description: "Micro Needling Radiofrequency for skin rejuvenation, tightening, and scar reduction." },
-            { title: "Laser Treatments", description: "Precision treatments for various skin concerns including pigmentation, hair removal, and texture refinement." },
-            { title: "Weight Management & Body Contouring", description: "Scientific approach to weight loss and body sculpting for a harmonious silhouette." }
+            { title: "Hydra Facials", description: "Deep cleansing and hydration treatments for immediate skin rejuvenation and lasting results.", image:'/images/hydrafacial adv.jpg' },
+            { title: "MNRF Therapy", description: "Micro Needling Radiofrequency for skin rejuvenation, tightening, and scar reduction." , image:'/images/MNRF Therapy adv.jpg'},
+            { title: "Laser Treatments", description: "Precision treatments for various skin concerns including pigmentation, hair removal, and texture refinement.", image:'/images/Laser Treatments adv.jpg' },
+            { title: "Weight Management & Body Contouring", description: "Scientific approach to weight loss and body sculpting for a harmonious silhouette.", image:'/images/Weight Management & Body Contouring adv.jpg' }
           ].map((tech, index) => (
             <Grid item xs={12} sm={6} md={3} key={index}>
               <SymmetricCard elevation={6}>
@@ -176,9 +176,8 @@ const AboutUs = () => {
                   display: 'flex', 
                   alignItems: 'center', 
                   justifyContent: 'center',
-                  bgcolor: 'primary.light'
                 }}>
-                  <StarIcon sx={{ fontSize: 80, color: 'white' }} />
+                  <img sx={{ fontSize: 80, color: 'white' }} src={tech.image} />
                 </Box>
                 <SymmetricCardContent>
                   <Typography variant="h6" gutterBottom>{tech.title}</Typography>

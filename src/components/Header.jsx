@@ -44,11 +44,12 @@ const Header = () => {
       label: 'Academy',
       key: 'academy',
       subItems: [
+        { label: 'Aesthetic Courses', href: '/academy/aesthetic' },
         { label: 'Hair Courses', href: '/academy/haircourses' },
         { label: 'Beauty Courses', href: '/academy/beautycourses' },
-        { label: 'Make up', href: '/academy/makeup' },
-        { label: 'Bridal', href: '/academy/bridal' },
-        { label: 'Nail', href: '/academy/nail' },
+        { label: 'Makeup Courses', href: '/academy/makeup' },
+        { label: 'Bridal Courses', href: '/academy/bridal' },
+        { label: 'Nail Courses', href: '/academy/nail' },
       ]
     },
     {
@@ -59,7 +60,7 @@ const Header = () => {
         { label: 'Styling', href: '/haircare/styling' },
         { label: 'Color', href: '/haircare/color' },
         { label: 'Spa', href: '/haircare/spa' },
-        { label: 'Treatment', href: 'haircare/treatment' },
+        // { label: 'Treatment', href: 'haircare/treatment' },
         { label: 'Kera Smooth', href: '/haircare/kerasmooth' },
         { label: 'Kera Rebond', href: '/haircare/kerabond' },
         { label: 'Botox', href: '/haircare/botox' },

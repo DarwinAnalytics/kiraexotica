@@ -20,6 +20,7 @@ import {
   LocalOffer as OfferIcon,
   ArrowForward as ArrowIcon
 } from '@mui/icons-material';
+import Review from './Review';
 
 // Hyper-modern, minimalist theme
 const theme = createTheme({
@@ -137,9 +138,9 @@ const SalonHomePage = () => {
                   gutterBottom
                   sx={{ color: 'white', mb: 3 }}
                 >
-                  Redefine Your 
+                  Reimagine Your 
                   <br />
-                  Beauty Narrative
+                  Beauty Journey
                 </Typography>
                 <Typography 
                   variant="body1" 
@@ -149,11 +150,15 @@ const SalonHomePage = () => {
                     maxWidth: 500 
                   }}
                 >
-                  Where innovative design meets personalized care. 
-                  Our approach transcends traditional beauty standards, 
-                  creating unique expressions of your individual style.
+                 Where cutting-edge creativity blends with tailored care. At Kira, we go beyond conventional beauty norms, crafting distinctive reflections of your personal style.
                 </Typography>
-                <Box sx={{ display: 'flex', gap: 2 }}>
+                <Typography  variant="paragraph" 
+                  sx={{ 
+                    color: 'rgba(255,255,255,0.8)', 
+                    mb: 4,
+                    maxWidth: 500 
+                  }} >Ready to start? Schedule your personalized consultation today!</Typography>
+                <Box sx={{ display: 'flex', gap: 2,marginTop:'22px' }}>
                   <Button 
                     variant="contained" 
                     endIcon={<ArrowIcon />}
@@ -167,7 +172,7 @@ const SalonHomePage = () => {
                       }
                     }}
                   >
-                    Book Consultation
+                    Book Free Consultation
                   </Button>
                 </Box>
               </Grid>
@@ -232,7 +237,6 @@ const SalonHomePage = () => {
       </Container>
 
       {/* Testimonials Section */}
-      <Container maxWidth="lg" sx={{ py: 8 }}>
         <Typography 
           variant="h3" 
           align="center" 
@@ -241,19 +245,61 @@ const SalonHomePage = () => {
         >
           Voices of Transformation
         </Typography>
-        <Grid container spacing={4}>
-          {testimonials.map((testimonial, index) => (
-            <Grid item xs={12} md={6} key={index}>
-              <Card 
-                elevation={0} 
-                sx={{ 
-                  height: '100%', 
-                  p: 4, 
-                  backgroundColor: theme.palette.background.paper,
-                  borderRadius: 4
-                }}
-              >
-                <Typography 
+
+        <Review/>
+             
+    {/* <Container>
+  <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 p-4 sm:p-6'>
+    <div className='flex justify-center'>
+      <img 
+        src="../images/review1.png" 
+        alt="Review 1" 
+        className='w-full h-auto object-contain rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300'
+      />
+    </div>
+    
+    <div className='flex justify-center'>
+      <img 
+        src="../images/review2.png" 
+        alt="Review 2" 
+        className='w-full h-auto object-contain rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300'
+      />
+    </div>
+    
+    <div className='flex justify-center'>
+      <img 
+        src="../images/review3.png" 
+        alt="Review 3" 
+        className='w-full h-auto object-contain rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300'
+      />
+    </div>
+    
+    <div className='flex justify-center'>
+      <img 
+        src="../images/review4.png" 
+        alt="Review 4" 
+        className='w-full h-auto object-contain rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300'
+      />
+    </div>
+    
+    <div className='flex justify-center'>
+      <img 
+        src="../images/review5.png" 
+        alt="Review 5" 
+        className='w-full h-auto object-contain rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300'
+      />
+    </div>
+    
+    <div className='flex justify-center'>
+      <img 
+        src="../images/review6.png" 
+        alt="Review 6" 
+        className='w-full h-auto object-contain rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300'
+      />
+    </div>
+  </div>
+</Container> */}
+                {/* <Typography 
                   variant="body1" 
                   color="textSecondary" 
                   sx={{ 
@@ -283,12 +329,7 @@ const SalonHomePage = () => {
                       {testimonial.profession}
                     </Typography>
                   </Box>
-                </Box>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
+                </Box> */}
     </ThemeProvider>
   );
 };

@@ -1,81 +1,40 @@
 import React from 'react';
 import { 
-  Container, 
-  Typography, 
-  Grid, 
-  Card, 
-  CardContent, 
-  CardMedia, 
-  ThemeProvider, 
-  createTheme,
-  Box,
-  Button
-} from '@mui/material';
-import { styled } from '@mui/system';
-import { 
-  Spa as SpaIcon, 
   Brush as BrushIcon, 
-  CameraAlt as CameraIcon,
-  ColorLens as ColorIcon,
-  Face as FaceIcon,
-  Healing as HealingIcon
-} from '@mui/icons-material';
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#00E5FF',
-    },
-    background: {
-      default: '#F4F7F9'
-    }
-  },
-  typography: {
-    fontFamily: "'Inter', 'Helvetica', 'Arial', sans-serif"
-  }
-});
-
-const ServiceCard = styled(Card)(({ theme }) => ({
-  height: '100%',
-  display: 'flex',
-  flexDirection: 'column',
-  borderRadius: theme.spacing(3),
-  transition: 'all 0.3s ease-in-out',
-  '&:hover': {
-    transform: 'translateY(-10px)',
-    boxShadow: '0 15px 30px rgba(0,0,0,0.1)'
-  }
-}));
+  Camera as CameraIcon,
+  Heart as HeartIcon,
+  User as UserIcon
+} from 'lucide-react';
 
 const ServicesPage = () => {
   const services = [
     {
       title: "Hair Styling",
-      // icon: <BrushIcon color="" sx={{ fontSize: 64 }} />,
+      icon: <BrushIcon className="w-16 h-16 text-cyan-400" />,
       description: "Personalized cutting, styling, and transformative hair treatments.",
       image: "/images/hairstyle home2.jpg",
       details: [
         "Precision Cuts",
-        "Color Treatments",
+        "Color Treatments", 
         "Highlights & Balayage",
         "Hair Repair Treatments"
       ]
     },
     {
       title: "Spa Wellness",
-      // icon: <SpaIcon color="" sx={{ fontSize: 64 }} />,
+      icon: <HeartIcon className="w-16 h-16 text-cyan-400" />,
       description: "Holistic wellness treatments for complete mind-body rejuvenation.",
       image: "/images/sap wellness home.jpg",
       details: [
         "Massage Therapy",
         "Facial Treatments",
-        "Body Treatments",
+        "Body Treatments", 
         "Aromatherapy"
       ]
     },
     {
       title: "Makeup & Bridal",
-      // icon: <CameraIcon color="" sx={{ fontSize: 64 }} />,
+      icon: <CameraIcon className="w-16 h-16 text-cyan-400" />,
       description: "Professional makeup artistry for every occasion and life moment.",
       image: "/images/bridal home.jpg",
       details: [
@@ -87,7 +46,7 @@ const ServicesPage = () => {
     },
     {
       title: "Skin Care",
-      // icon: <FaceIcon color="" sx={{ fontSize: 64 }} />,
+      icon: <UserIcon className="w-16 h-16 text-cyan-400" />,
       description: "Advanced skincare treatments tailored to your unique skin needs.",
       image: "/images/skincare 2 home.jpg",
       details: [
@@ -100,67 +59,59 @@ const ServicesPage = () => {
   ];
 
   return (
-    <ThemeProvider theme={theme}>
-      <Container maxWidth="lg" sx={{ py: 8 }}>
-        <Typography 
-          variant="h3" 
-          align="center" 
-          gutterBottom 
-          sx={{ mb: 6 }}
-        >
+    <div className="bg-slate-50 min-h-screen font-sans">
+      <div className="max-w-6xl mx-auto px-4 py-16">
+        <h1 className="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-12">
           Our Comprehensive Services
-        </Typography>
+        </h1>
         
-        <Grid container spacing={4}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <Grid item xs={12} md={6} key={index}>
-              <ServiceCard elevation={3}>
-                <CardMedia
-                  component="img"
-                  height="250"
-                  image={service.image}
+            <div 
+              key={index}
+              className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-300 ease-in-out flex flex-col h-full"
+            >
+              {/* Image Container with Fixed Height */}
+              <div className="relative h-64 overflow-hidden rounded-t-3xl">
+                <img
+                  src={service.image}
                   alt={service.title}
+                  className="w-full h-full object-cover"
                 />
-                <CardContent sx={{ flexGrow: 1 }}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                    {service.icon}
-                    <Typography 
-                      variant="h5" 
-                      sx={{ ml: 2, fontWeight: 'bold' }}
+              </div>
+              
+              {/* Content Container */}
+              <div className="p-6 flex-1 flex flex-col">
+                {/* Header Section */}
+                <div className="flex items-center mb-4">
+                  {/* {service.icon} */}
+                  <h2 className="text-2xl font-bold text-gray-800 ml-3">
+                    {service.title}
+                  </h2>
+                </div>
+                
+                {/* Description */}
+                <p className="text-gray-600 text-base mb-4 flex-grow">
+                  {service.description}
+                </p>
+                
+                {/* Service Details Tags */}
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {service.details.map((detail, idx) => (
+                    <button 
+                      key={idx}
+                      className="px-3 py-1.5 border-2 border-cyan-400 text-cyan-600 rounded-xl text-sm font-medium hover:bg-cyan-50 transition-colors duration-200"
                     >
-                      {service.title}
-                    </Typography>
-                  </Box>
-                  <Typography 
-                    variant="body1" 
-                    color="textSecondary" 
-                    sx={{ mb: 2 }}
-                  >
-                    {service.description}
-                  </Typography>
-                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-                    {service.details.map((detail, idx) => (
-                      <Button 
-                        key={idx} 
-                        variant="outlined" 
-                        color="" 
-                        size="small"
-                        sx={{ 
-                          borderRadius: 2, 
-                          textTransform: 'none' 
-                        }}
-                      >
-                        {detail}
-                      </Button>
-                    ))}
-                  </Box>
-                </CardContent>
-              </ServiceCard>
-            </Grid>
+                      {detail}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
           ))}
-        </Grid>
-      </Container>
-    </ThemeProvider>
+        </div>
+      </div>
+    </div>
   );
 };
 

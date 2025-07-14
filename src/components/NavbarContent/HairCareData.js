@@ -12,7 +12,7 @@ export const hairTreatments = [
   {
     "title": "Hair Colour",
     "description": "Hair coloring involves applying a color to your hair, either on the surface or deeper, to create a permanent or temporary change in your hair's color. It enhances your overall look, giving you a fresh, vibrant style.",
-    "imageUrl": "/images/Hair Colour.jpg"
+    "imageUrl": "/images/hari color.jpg"
   },
   {
     "title": "Hair Spa",
@@ -22,7 +22,7 @@ export const hairTreatments = [
   {
     "title": "Keratin Smoothening",
     "description": "Keratin smoothening is a treatment where a keratin-based solution is applied to your hair, which is then sealed in with heat. It helps reduce frizz, adds shine, and makes your hair easier to manage by replenishing the natural proteins in your hair.",
-    "imageUrl": "/images/Keratin Smoothening.jpg"
+    "imageUrl": "/images/keratin smoothening.jpg"
   },
   {
     "title": "Rebonding",
@@ -31,22 +31,22 @@ export const hairTreatments = [
   },
   {
     "title": "Hair Botox",
-    "description": "Hair botox is a deep conditioning treatment that fills in damaged spots in your hair with a special ingredient like keratin. It helps make your hair smoother, shinier, and healthier by repairing and strengthening each strand.",
+    "description": "At Kira Exotica, we bring you the ultimate in hair revitalization with our Hair Botox treatment. This deep-conditioning therapy targets damaged areas of your hair, infusing each strand with powerful ingredients like keratin to repair, strengthen, and rejuvenate.The result? Silky-smooth, shinier, and healthier-looking hair that feels as good as it looks. Rediscover your hair’s natural beauty with Kira Exotica — where restoration meets luxury.",
     "imageUrl": "/images/Hair Botox.jpg"
   },
   {
     "title": "Nanoplastia",
-    "description": "Nanoplastia is a treatment that uses advanced technology and natural ingredients to deeply nourish your hair. It works on a cellular level, hydrating and strengthening your hair to give it a healthy, rejuvenated look.",
+    "description": "At Kira Exotica, we believe true beauty starts with healthy, vibrant hair. Our Nanoplastia treatment is a revolutionary solution that combines cutting-edge technology with the power of natural ingredients to transform your hair from within. Working on a cellular level, Nanoplastia deeply nourishes, hydrates, and strengthens every strand, restoring vitality and giving your hair a luxuriously smooth, rejuvenated look. Experience the difference — where science meets nature, and your hair's true beauty is revealed.",
     "imageUrl": "/images/Nanoplastia.jpg"
   },
   {
     "title": "Hair Patch",
-    "description": "Hair patches are a great solution for anyone experiencing hair loss. They are designed to cover thinning areas and add volume, helping you regain your confidence with a fuller look.",
+    "description": "At Kira Exotica, we offer premium Hair Patches designed to help you regain your confidence and style. Whether you're experiencing hair thinning or noticeable hair loss, our patches provide a natural-looking solution by adding volume and seamlessly covering sparse areas. Crafted for comfort, durability, and a flawless finish, our hair patches blend effortlessly with your natural hair, giving you a fuller, more vibrant look. Rediscover your best self with Kira Exotica — where beauty solutions meet your lifestyle..",
     "imageUrl": "/images/Hair Patch.jpg"
   },
   {
     "title": "Hair Extensions",
-    "description": "Hair extensions are a non-surgical, painless way to add length, volume, or color to your natural hair. They are either human or synthetic hair strands that are attached to your own hair, giving you a quick hair transformation.",
+    "description": "At Kira Exotica, we believe in effortless beauty transformations. Our Hair Extensions offer a non-surgical, painless way to instantly add length, volume, or even a splash of color to your natural hair. Made from premium human or high-quality synthetic strands, our extensions are expertly attached to blend seamlessly with your own hair. Whether you're looking for a subtle enhancement or a bold new look, Kira Exotica helps you achieve the hair you've always dreamed of — beautifully, naturally, and with complete ease.",
     "imageUrl": "/images/Hair Extensions.jpg"
   }
 ];

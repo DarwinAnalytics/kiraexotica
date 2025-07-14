@@ -247,3 +247,71 @@ export const nailArtAndExtensionsCourses = [
       imageUrl: "/images/Gel Extensions with Nail Art.jpg"
     }
 ];
+
+export const aesthetic = [
+  {
+    title: "Basic Skin Care and Facials",
+    description: "This beginner-friendly course introduces students to professional skin care techniques, including skin analysis, cleansing, exfoliation, and basic facial treatments. Students will learn about skin types, product selection, and client consultation. Hands-on practice ensures confidence in delivering relaxing and effective facials. Perfect for those starting their journey in aesthetics.",
+    duration: "4 Weeks",
+    fee: "₹18,000 – ₹22,000",
+    imageUrl: "/images/Basic Skin Care and Facials.jpg"
+  },
+  {
+    title: "Advanced Aesthetic Facials",
+    description: "Designed for those with basic skin care knowledge, this course focuses on advanced facial techniques like anti-aging treatments, hydration therapies, and specialized masks. Students will learn to use professional-grade equipment and customize treatments for clients. Ideal for aestheticians looking to elevate their skills and offer premium services.",
+    duration: "3 Weeks",
+    fee: "₹20,000 – ₹25,000",
+    imageUrl: "/images/Advanced Aesthetic Facials.jpg"
+  },
+ 
+  
+  {
+    title: "Chemical Peels and Skin Resurfacing",
+    description: "This course introduces students to chemical peels and skin resurfacing techniques for addressing concerns like acne, pigmentation, and aging. Students will learn about peel types, application methods, and client safety. Hands-on training ensures confidence in delivering effective treatments. Ideal for those new to advanced skin care.",
+    duration: "3 Weeks",
+    fee: "₹22,000 – ₹28,000",
+    imageUrl: "/images/Chemical Peels and Skin Resurfacing.jpg"
+  },
+  {
+    title: "Microneedling and Skin Rejuvenation",
+    description: "This advanced course focuses on microneedling techniques to promote collagen production and skin rejuvenation. Students will learn to use professional microneedling devices, understand skin anatomy, and tailor treatments for clients. Perfect for experienced aestheticians looking to offer cutting-edge skin solutions.",
+    duration: "2 Weeks",
+    fee: "₹25,000 – ₹30,000",
+    imageUrl: "/images/Microneedling and Skin Rejuvenation.jpg"
+  },
+   {
+    title: "Laser Hair Removal Treatment",
+    description: "This course trains students in the safe and effective use of laser technology for hair removal. Covering skin and hair types, laser safety, and client consultation, the course includes hands-on practice with professional-grade laser equipment. Ideal for beginners or aestheticians looking to add laser hair removal to their service offerings.",
+    duration: "3 Weeks",
+    fee: "₹25,000 – ₹30,000",
+    imageUrl: "/images/Laser Hair Removal Treatment.jpg"
+  },
+  {
+    title: "Hair Regrowth and Scalp Treatment",
+    description: "This specialized course focuses on non-invasive hair regrowth techniques and scalp health treatments. Students will learn about causes of hair loss, scalp analysis, and advanced therapies like PRP (Platelet-Rich Plasma) and low-level laser therapy. Hands-on training equips students to offer solutions for clients seeking hair restoration. Perfect for aestheticians or trichologists aiming to specialize in hair regrowth.",
+    duration: "3 Weeks",
+    fee: "₹28,000 – ₹35,000",
+    imageUrl: "/images/Hair Regrowth and Scalp Treatment.jpg"
+  },
+  {
+    title: "Makeup Artistry - Level 1",
+    description: "This beginner’s course covers the fundamentals of professional makeup application, including skin prep, base makeup, and natural looks. Students will learn color theory, product selection, and techniques for various face shapes. Hands-on practice builds confidence for bridal, event, or everyday makeup services.",
+    duration: "4 Weeks",
+    fee: "₹20,000 – ₹25,000",
+    imageUrl: "/images/Makeup Artistry - Level 1.jpg"
+  },
+  {
+    title: "Makeup Artistry - Level 2",
+    description: "Designed for those with basic makeup skills, this advanced course explores creative and editorial makeup techniques. Students will learn bold looks, contouring, and special effects for photoshoots or high-fashion events. Perfect for makeup artists aiming to expand their portfolio and attract premium clients.",
+    duration: "3 Weeks",
+    fee: "₹25,000 – ₹30,000",
+    imageUrl: "/images/Makeup Artistry - Level 2.jpg"
+  }, {
+    title: "Microblading and Brow Artistry",
+    description: "This course teaches the art of microblading and eyebrow shaping for beginners. Students will learn techniques for creating natural, defined brows using semi-permanent makeup methods. The course includes theory, color matching, and hands-on practice on models. Perfect for those passionate about brow Aesthetics and precision artistry.",
+    duration: "3 Weeks",
+    fee: "₹25,000 – ₹30,000",
+    imageUrl: "/images/Microblading and Brow Artistry.jpg"
+  }
+ 
+];

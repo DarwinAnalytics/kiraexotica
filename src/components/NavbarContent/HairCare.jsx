@@ -3,13 +3,13 @@ import { Box, Typography, Container, Grid } from '@mui/material';
 import { useLocation } from "react-router-dom";
 import { styled } from '@mui/material/styles';
 
-// Styled components for symmetric cards
+// Styled components for symmetric cards with fixed image sizes
 const SymmetricCard = styled(Box)(({ theme }) => ({
   height: '100%',
   display: 'flex',
   flexDirection: 'row', // Horizontal layout for full-width cards
   borderRadius: theme.shape.borderRadius,
-  overflow: 'hidden',
+  overflow: 'hidden', // Important to prevent any content overflow
   boxShadow: theme.shadows[6],
   backgroundColor: theme.palette.background.paper,
   [theme.breakpoints.down('md')]: {
@@ -19,13 +19,20 @@ const SymmetricCard = styled(Box)(({ theme }) => ({
 
 const SymmetricCardMedia = styled(Box)(({ theme }) => ({
   width: '40%', // Fixed width for card images in desktop view
-  minHeight: 300, // Minimum height
-  overflow: 'hidden',
+  height: 350, // Fixed height for all images
+  flexShrink: 0, // Prevent the image container from shrinking
   [theme.breakpoints.down('md')]: {
     width: '100%',
-    height: 200,
+    height: 250, // Fixed height on mobile
   }
 }));
+
+const CardImage = styled('img')({
+  width: '100%',
+  height: '100%',
+  objectFit: 'cover', // Makes image cover the container while maintaining aspect ratio
+  display: 'block', // Remove any extra space that might appear below the image
+});
 
 const SymmetricCardContent = styled(Box)(({ theme }) => ({
   flexGrow: 1,
@@ -41,10 +48,10 @@ const SymmetricCardContent = styled(Box)(({ theme }) => ({
 
 const CourseTitle = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(2),
+  fontWeight: 600,
 }));
 
 const CourseDescription = styled(Typography)(({ theme }) => ({
-  // Add text justification like MS Word
   textAlign: 'justify',
 }));
 
@@ -128,11 +135,7 @@ const HairCare = ({ hairCourses }) => {
                 <img 
                   src={course.imageUrl} 
                   alt={course.title}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover'
-                  }}
+                  loading="lazy"
                 />
               </SymmetricCardMedia>
               <SymmetricCardContent>

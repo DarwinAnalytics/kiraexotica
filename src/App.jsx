@@ -5,7 +5,7 @@ import Header from './components/Header';
 import Home from './Pages/Home';
 import Footer from './components/Footer';
 import HairCourses from './components/NavbarContent/HairCourses';
-import { beautyWellnessCourses, bridalAndProfessionalCourses, hairCourses, nailArtAndExtensionsCourses } from './components/NavbarContent/CourseData';
+import { aesthetic, beautyWellnessCourses, bridalAndProfessionalCourses, hairCourses, nailArtAndExtensionsCourses } from './components/NavbarContent/CourseData';
 import HairCare from './components/NavbarContent/HairCare';
 import { hairTreatments } from './components/NavbarContent/HairCareData';
 import { skinCare } from './components/NavbarContent/SkinCareData';
@@ -23,11 +23,12 @@ function App() {
     <Header />
     <Routes>
       <Route exact path="/" element={<Home/>} />
-      <Route exact path="/academy/haircourses" element={<HairCourses hairCourses={hairCourses}/>} />
-      <Route exact path="/academy/beautycourses" element={<HairCourses hairCourses={beautyWellnessCourses}/>} />
-      <Route exact path="/academy/makeup" element={<HairCourses hairCourses={beautyWellnessCourses}/>} />
-      <Route exact path="/academy/bridal" element={<HairCourses hairCourses={bridalAndProfessionalCourses}/>} />
-      <Route exact path="/academy/nail" element={<HairCourses hairCourses={nailArtAndExtensionsCourses}/>} />
+      <Route exact path="/academy/haircourses" element={<HairCourses heading="Kira's Hair Styling Courses" description=" Explore our professional hair styling courses designed to elevate your skills" hairCourses={hairCourses}/>} />
+      <Route exact path="/academy/aesthetic" element={<HairCourses heading=" Kira's Aesthetic Courses" description=" Explore our professional Aesthetic courses designed to elevate your skills" hairCourses={aesthetic}/>} />
+      <Route exact path="/academy/beautycourses" element={<HairCourses heading="Kira's Beauty Courses" description=" Premier training in innovative beauty techniques for aspiring professionals.."  hairCourses={beautyWellnessCourses}/>} />
+      <Route exact path="/academy/makeup" element={<HairCourses heading="Kira's Make-Up Courses" description=" Elite instruction in cutting-edge make-up skills for career success" hairCourses={beautyWellnessCourses}/>} />
+      <Route exact path="/academy/bridal" element={<HairCourses heading="Kira's Bridal Courses" description=" Top-tier training in sophisticated bridal beauty skills for professional excellence." hairCourses={bridalAndProfessionalCourses}/>} />
+      <Route exact path="/academy/nail" element={<HairCourses heading="Kira's Nail Art Courses" description=" Premier instruction in innovative nail art skills for career excellence."  hairCourses={nailArtAndExtensionsCourses}/>} />
     
 
     {/* Hair care navbar */}

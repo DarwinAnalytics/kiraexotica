@@ -60,14 +60,14 @@ const CourseInfo = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.background.paper, // Ensure background color matches the card
 }));
 
-const HairCourses = ({ hairCourses }) => {
+const HairCourses = ({ hairCourses,heading,description }) => {
   return (
     <Container maxWidth="lg" sx={{ py: 8 }}>
       <Typography variant="h3" component="h1" align="center" gutterBottom>
-        Hair Styling Courses
+        {heading}
       </Typography>
       <Typography variant="subtitle1" align="center" color="text.secondary" paragraph sx={{ mb: 6 }}>
-        Explore our professional hair styling courses designed to elevate your skills
+        {description}
       </Typography>
       
       <Grid container spacing={4}>

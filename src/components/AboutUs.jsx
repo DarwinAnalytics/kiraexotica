@@ -16,8 +16,8 @@ import { styled } from '@mui/material/styles';
 import StarIcon from '@mui/icons-material/Star';
 
 // Placeholder images - replace with actual images
-const salonInteriorImage = '/images/interior.jpg';
-const founderImage = '/images/founder.jpg';
+const salonInteriorImage = '/images/aboutpoonam.jpeg';
+const founderImage = '/images/aboutpoonam1.jpeg';
 const serviceImage1 = '/images/chemicalpeel.jpg';
 const serviceImage2 = '/images/mesotreatment.jpg';
 const serviceImage3 = '/images/collagen.jpg';
@@ -39,7 +39,7 @@ const SymmetricCard = styled(Card)(({ theme }) => ({
 }));
 
 const SymmetricCardMedia = styled(CardMedia)(({ theme }) => ({
-  height: 250, // Fixed height for all card images
+  height: 600, // Fixed height for all card images
   width: '100%', // Full width
   objectFit: 'cover'
 }));
@@ -98,14 +98,14 @@ const AboutUs = () => {
         {/* Founder Section */}
         <Grid container spacing={4} sx={{ mb: 6 }}>
           <Grid item xs={12} md={5}>
-            <SymmetricCard elevation={6}>
+            <div elevation={6}>
               <SymmetricCardMedia
                 component="img"
-                sx={{ height: 400 }} // Specific override for founder image
+                className='object-cover'
                 image={founderImage}
                 alt="Poonam Chauhan"
               />
-            </SymmetricCard>
+            </div>
           </Grid>
           <Grid item xs={12} md={7}>
             <Typography variant="h4" gutterBottom>
@@ -172,7 +172,7 @@ const AboutUs = () => {
             <Grid item xs={12} sm={6} md={3} key={index}>
               <SymmetricCard elevation={6}>
                 <Box sx={{ 
-                  height: 250, 
+                  height: 350, 
                   display: 'flex', 
                   alignItems: 'center', 
                   justifyContent: 'center',

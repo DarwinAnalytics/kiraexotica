@@ -17,9 +17,9 @@ import AboutUs from './components/AboutUs';
 import SalonPackageBooking from './Pages/SalonPackageBooking';
 import BeautyServicesBooking from './Pages/BeautyServicesBooking';
 import Appointment from './Pages/Appointment';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import RefundPolicy from './pages/RefundPolicy';
-import CancellationPolicy from './pages/CancellationPolicy';
+import PrivacyPolicy from './Pages/PrivacyPolicy';
+import RefundPolicy from './Pages/RefundPolicy';
+import CancellationPolicy from './Pages/CancellationPolicy';
 function App() {
   return (
     <Router>

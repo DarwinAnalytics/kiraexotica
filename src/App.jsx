@@ -17,6 +17,9 @@ import AboutUs from './components/AboutUs';
 import SalonPackageBooking from './Pages/SalonPackageBooking';
 import BeautyServicesBooking from './Pages/BeautyServicesBooking';
 import Appointment from './Pages/Appointment';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import RefundPolicy from './pages/RefundPolicy';
+import CancellationPolicy from './pages/CancellationPolicy';
 function App() {
   return (
     <Router>
@@ -96,8 +99,10 @@ function App() {
          {/* service booking payment option  */}
          <Route path="/customizepackage" element={<BeautyServicesBooking/>} />
          <Route path="/appointment" element={<Appointment/>} />
-
-        
+{/* privacy policy */}
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+<Route path="/refund-policy" element={<RefundPolicy />} />
+<Route path="/cancellation-policy" element={<CancellationPolicy />} />
 
 
     </Routes>
